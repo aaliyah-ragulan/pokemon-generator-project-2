@@ -13,13 +13,13 @@
       <div class="navbar">
         <div class="container flex">
           <div>
-            <img class="logo" src="./images/pokemon-logo.png">
+            <img class="logo" src="./images/pokemon-logo.png" />
           </div>
           <nav>
             <ul>
               <li><a href="index.html">Home</a></li>
-              <li><a href="#">Features</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="#">Stats</a></li>
+              <li><a href="#">Favourites</a></li>
             </ul>
           </nav>
         </div>
@@ -28,27 +28,27 @@
 
     <!-- the generator -->
     <main>
-      <section class="generatorConatiner">
+      <section class="generatorContainer">
         <div class="container grid">
           <h2 class="gridOne">Choose Your Pokemon!</h2>
 
           <div class="gridTwo generatedImage"></div>
           <div class="gridThree generatedName"></div>
-          <p class="gridFour generatorBtn"><a href="#">Click Here</a></p>
-          <p class="gridFive favBtn"><a href="#">Save Pokemon</a></p>
+          <p class="gridFour generatorBtn btn"><a href="#">Click Here</a></p>
+          <p class="gridFive favBtn btn"><a href="#">Save Pokemon</a></p>
         </div>
       </section>
 
       <!-- the stats container -->
-      <section class="statsConatiner">
-        <div class="container">
-          <h2>Pokemon Stats</h2>
+      <section class="statsContainer">
+        <h2>Pokemon Stats</h2>
+        <div class="container flex">
           <div class="pokemonType">
             <h3>Type</h3>
             <p>Lorem ipsum dolor sit amet.</p>
           </div>
           <div class="pokemonCharacteristic">
-            <h3>Chartersitic</h3>
+            <h3>Characteristic</h3>
             <p>Lorem ipsum dolor sit amet.</p>
           </div>
           <div class="pokemonAbilities">
@@ -62,18 +62,20 @@
         </div>
       </section>
 
-      <section class="favouritePokemon">
+      <section class="favouriteContainer">
         <div class="container">
           <h2>Favourite 3 Pokemon</h2>
-          <div>
-            <ul>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
-          </div>
+          <ul>
+            <li><img src="https://placekitten.com/300/300" alt="" /></li>
+            <li><p>pokemon2</p></li>
+            <li><p>pokemon3</p></li>
+          </ul>
         </div>
       </section>
     </main>
+
+    <footer>
+      <p>Made at <a href="https://junocollege.com/">Juno College</a> 2021</p>
+    </footer>
   </body>
 </html>
