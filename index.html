@@ -10,16 +10,16 @@
   <body>
     <!-- the logo and nav  -->
     <header>
-      <div class="container">
-        <div class="log">
-          <h1>Pokemon</h1>
-        </div>
-        <div>
+      <div class="navbar">
+        <div class="container flex">
+          <div>
+            <img class="logo" src="./images/pokemon-logo.png">
+          </div>
           <nav>
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Generator</a></li>
-              <li><a href="#">Favorites</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#">Features</a></li>
+              <li><a href="#">Contact</a></li>
             </ul>
           </nav>
         </div>
@@ -29,19 +29,20 @@
     <!-- the generator -->
     <main>
       <section class="generatorConatiner">
-        <h2>Choose Your Pokemon!</h2>
-        <div class="container">
-          <div class="generatedImage"></div>
-          <div class="generatedName"></div>
-          <div class="generatorBtn"></div>
-          <div class="favBtn"></div>
+        <div class="container grid">
+          <h2 class="gridOne">Choose Your Pokemon!</h2>
+
+          <div class="gridTwo generatedImage"></div>
+          <div class="gridThree generatedName"></div>
+          <p class="gridFour generatorBtn"><a href="#">Click Here</a></p>
+          <p class="gridFive favBtn"><a href="#">Save Pokemon</a></p>
         </div>
       </section>
 
       <!-- the stats container -->
       <section class="statsConatiner">
-        <h2>Pokemon Stats</h2>
         <div class="container">
+          <h2>Pokemon Stats</h2>
           <div class="pokemonType">
             <h3>Type</h3>
             <p>Lorem ipsum dolor sit amet.</p>
@@ -62,8 +63,8 @@
       </section>
 
       <section class="favouritePokemon">
-        <h2>Favourite 3 Pokemon</h2>
         <div class="container">
+          <h2>Favourite 3 Pokemon</h2>
           <div>
             <ul>
               <li></li>

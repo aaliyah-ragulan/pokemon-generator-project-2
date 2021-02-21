@@ -1,3 +1,94 @@
-* {
+@import "snippet";
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+*{
   border: 1px solid red;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+h2 {
+  text-align: center;
+}
+
+//HEADER STYLES
+
+.navbar {
+  background-image: url(../images/pikachu-hero.jpg);
+  background-position: 20% 50%; 
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+}
+
+.navbar a {
+  color: white;
+  padding: 10px;
+  margin: 0 5px;
+}
+
+.navbar a:hover {
+  border-bottom: 1px solid white;
+}
+.flex {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+
+}
+
+.navbar ul {
+  display: flex;
+  
+}
+
+.logo {
+  width: 30%;
+}
+
+// GENERATOR SECTION
+
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.generatedImage, .generatedName, .generatorBtn, .favBtn {
+  height: 300px;
+  width: 300px;
+}
+
+.gridOne {
+  grid-row-start: 1;
+  grid-column-start: span 3;
+  
+}
+.gridThree,.gridFour,.gridFive {
+  grid-column-start: 2;
+  grid-column-end: 4 ;
+  
 }
