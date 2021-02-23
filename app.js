@@ -13,7 +13,7 @@ let pokemonAbilities = document.querySelector(".pokemonAbilities");
 let pokemonMoves = document.querySelector(".pokemonMoves");
 let favouritePokemon = document.querySelector(".favList");
 let generatorButton = document.querySelector(".generatorBtn");
-let list = document.querySelector('.list')
+let list = document.querySelector(".list");
 
 let favButton = document.querySelector(".favBtn");
 
@@ -37,14 +37,13 @@ pokemonGenerator.randomizePokemon = Math.floor(Math.random() * 100);
 // Click generates a random pokemon, information is store in a new variable
 
 generatorButton.addEventListener("click", function (event) {
-
   //prevents refresh
   event.preventDefault();
   //console.log("click");
 
   //grabs api data
   fetch(`${pokemonGenerator.apiURL}${pokemonGenerator.randomizePokemon}`)
-  //returns promise
+    //returns promise
     .then((response) => {
       return response.json();
     })
@@ -86,36 +85,40 @@ generatorButton.addEventListener("click", function (event) {
       let abilities = pokemonGenerator.pokemonAbilities;
       pokemonAbilities.innerHTML = abilities;
 
-
       //method to save pokemon, fav button functionality
       favButton.addEventListener("click", function (event) {
-       event.preventDefault();
-
-
+        event.preventDefault();
         // favouritePokemon.appendChild(document.createTextNode(name));
         // console.log(name);
+        let txt = name;
+        li = document.createElement("li");
+        li.innerHTML = "";
 
-        let txt = name 
-       
-
-        if (list > [3], list++) {
-          li = document.createElement('li');
+        if (li) {
           li.innerHTML = txt;
-          list.insertBefore(li,list.childNodes[0]);
-
+          list.insertBefore(li, list.childNodes[0]);
+          console.log("it works");
+        } else {
+          console.log("doesnt work");
         }
-        
-        
-        
-        
-        
-        
 
-        
-        
-        console.log(list)
-        
+        // var myNodelist = document.getElementsByTagName("LI");
+        // var i;
+        // for (i = 0; i < myNodelist.length; i++) {
+        //   var span = document.createElement("SPAN");
+        //   var txt = document.createTextNode("\u00D7");
+        //   span.className = "close";
+        //   span.appendChild(txt);
+        //   myNodelist[i].appendChild(span);
 
+        // if (((list.childNodes = 1), list.childNodes.length < 3)) {
+        //   console.log("less than 3");
+        // } else {
+        //   console.log("more than 3!");
+        // }
+        // // if ((li < 4, li++)) {
+        // // }
+        // console.log(list);
       });
     });
 });
