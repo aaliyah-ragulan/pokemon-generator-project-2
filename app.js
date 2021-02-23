@@ -8,7 +8,7 @@ pokemonGenerator.apiURL = "https://pokeapi.co/api/v2/pokemon/";
 let pokemonImage = document.querySelector(".generatedImage");
 let pokemonName = document.querySelector(".generatedName");
 let pokemonType = document.querySelector(".pokemonTypeName");
-let pokemonCharacteristic = document.querySelector(".pokemonCharacteristic");
+let pokemonNumber = document.querySelector(".pokemonNumber");
 let pokemonAbilities = document.querySelector(".pokemonAbilities");
 let pokemonMoves = document.querySelector(".pokemonMoves");
 let favouritePokemon = document.querySelector("ul");
@@ -43,24 +43,43 @@ generatorButton.addEventListener("click", function () {
       console.log(jsonResponse);
       pokemonGenerator.pokemonName = jsonResponse.species["name"];
       let name = pokemonGenerator.pokemonName;
-      console.log(name);
+      
+      pokemonName.innerHTML = name
+
+
+
       //   let type = pokemonGenerator.console.log(name);
       //pokemonGenerator.pokemonType = jsonResponse.types[0].type.name
       pokemonGenerator.pokemonType = jsonResponse.types[0]["type"]["name"];
       let type = pokemonGenerator.pokemonType;
-      console.log(type);
-
+      //console.log(type)
+      
+      pokemonType.innerHTML = type
+    
       pokemonGenerator.pokemonImage = jsonResponse.sprites["front_default"];
       let image = pokemonGenerator.pokemonImage;
-      console.log(image);
+      let pokeImage = document.createElement('img')
 
-      pokemonGenerator.pokemonMoves = jsonResponse.stats[0]["base_stat"];
+      pokeImage.src = image
+
+      pokemonImage.append(pokeImage)
+      
+      //pokemonImage.src = image
+
+      pokemonGenerator.pokemonMoves = jsonResponse.moves[0]["move"]["name"];
       let stats = pokemonGenerator.pokemonMoves;
-      console.log(stats);
-      //   pokemonGenerator.pokemonCharacteristic =
-      //     jsonResponse.[""];
-      //   let characteristic = pokemonGenerator.pokemonCharacteristic;
-      //   console.log(characteristic);
+      
+      pokemonMoves.innerHTML = stats
+
+      pokemonGenerator.pokemonNumber = jsonResponse.order
+      let pokeNumber = pokemonGenerator.pokemonNumber
+      pokemonNumber.innerHTML = pokeNumber
+        
+      pokemonGenerator.pokemonAbilities =
+          jsonResponse.abilities[0]["ability"]["name"];
+        let abilities = pokemonGenerator.pokemonAbilities;
+        
+        pokemonAbilities.innerHTML = abilities
     });
 });
 
