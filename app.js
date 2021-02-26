@@ -15,11 +15,14 @@ let favouritePokemon = document.querySelector(".favList");
 let generatorButton = document.querySelector(".generatorBtn");
 let list = document.querySelector(".list");
 
+pokemonGenerator.numOfFav = 3;
+pokemonGenerator.counter = 0;
+pokemonGenerator.form = document.querySelector("form");
+
 let favButton = document.querySelector(".favBtn");
 
 //initialize preset data
 //apiURL
-pokemonGenerator.randomizePokemon = Math.floor(Math.random() * 100);
 
 // fetch(`${pokemonGenerator.apiURL}${pokemonGenerator.randomizePokemon}`)
 // .then((response) => {
@@ -37,12 +40,13 @@ pokemonGenerator.randomizePokemon = Math.floor(Math.random() * 100);
 // Click generates a random pokemon, information is store in a new variable
 
 generatorButton.addEventListener("click", function (event) {
+  const randomizePokemon = Math.floor(Math.random() * 100);
   //prevents refresh
   event.preventDefault();
   //console.log("click");
 
   //grabs api data
-  fetch(`${pokemonGenerator.apiURL}${pokemonGenerator.randomizePokemon}`)
+  fetch(`${pokemonGenerator.apiURL}${randomizePokemon}`)
     //returns promise
     .then((response) => {
       return response.json();
@@ -67,6 +71,7 @@ generatorButton.addEventListener("click", function (event) {
       let image = pokemonGenerator.pokemonImage;
       let pokeImage = document.createElement("img");
       pokeImage.src = image;
+      pokemonImage.innerHTML = "";
       pokemonImage.append(pokeImage);
 
       //grabs move
@@ -85,8 +90,9 @@ generatorButton.addEventListener("click", function (event) {
       let abilities = pokemonGenerator.pokemonAbilities;
       pokemonAbilities.innerHTML = abilities;
 
-      //method to save pokemon, fav button functionality
-      favButton.addEventListener("click", function (event) {
+      console.log("hi");
+
+      const handleSaveButton = function (event) {
         event.preventDefault();
         // favouritePokemon.appendChild(document.createTextNode(name));
         // console.log(name);
@@ -94,35 +100,51 @@ generatorButton.addEventListener("click", function (event) {
         li = document.createElement("li");
         li.innerHTML = "";
 
-        if (li) {
-          li.innerHTML = txt;
-          list.insertBefore(li, list.childNodes[0]);
-          console.log("it works");
+        console.log("hi");
+
+        // console.log(pokemonGenerator.counter);
+
+        // html collection that needs to be an array
+        // console.log(list.children);
+
+        const savedPokemonArray = [...list.children];
+        const checkDuplicate = function () {
+          let hasDuplicate = false;
+          savedPokemonArray.forEach((pokemon) => {
+            // console.log(pokemon.innerHTML);
+            const savedName = pokemon.innerHTML;
+            if (savedName === txt) {
+              hasDuplicate = true;
+            }
+          });
+          return hasDuplicate;
+        };
+
+        console.log(checkDuplicate());
+
+        console.log(savedPokemonArray);
+
+        if (pokemonGenerator.counter < pokemonGenerator.numOfFav) {
+          if (li && !checkDuplicate()) {
+            li.innerHTML = txt;
+            list.insertBefore(li, list.childNodes[0]);
+            console.log("it works");
+            pokemonGenerator.counter++;
+          } else if (li) {
+            console.log("pokemon already saved");
+          }
         } else {
-          console.log("doesnt work");
+          alert("more than 3!");
         }
+      };
 
-        // var myNodelist = document.getElementsByTagName("LI");
-        // var i;
-        // for (i = 0; i < myNodelist.length; i++) {
-        //   var span = document.createElement("SPAN");
-        //   var txt = document.createTextNode("\u00D7");
-        //   span.className = "close";
-        //   span.appendChild(txt);
-        //   myNodelist[i].appendChild(span);
-
-        // if (((list.childNodes = 1), list.childNodes.length < 3)) {
-        //   console.log("less than 3");
-        // } else {
-        //   console.log("more than 3!");
-        // }
-        // // if ((li < 4, li++)) {
-        // // }
-        // console.log(list);
-      });
+      //method to save pokemon, fav button functionality
+      favButton.onclick = handleSaveButton;
+      //   pokemonGenerator.form.addEventListener("submit", function () {
+      //     favButton.removeEventListener("click", handleSaveButton);
+      //   });
     });
 });
-
 //create event listener on save pokemon button (grab api data outputted)
 
 //create event listener on random generator button (grab api data)
@@ -131,4 +153,22 @@ generatorButton.addEventListener("click", function (event) {
 //create a method to insert pokemon key stats based on result
 //create event listener to save generated pokemon
 //create a method to add generated pokemon to list
-//create a method to clear the list
+//create a method to clear the list.
+
+// var myNodelist = document.getElementsByTagName("LI");
+// var i;
+// for (i = 0; i < myNodelist.length; i++) {
+//   var span = document.createElement("SPAN");
+//   var txt = document.createTextNode("\u00D7");
+//   span.className = "close";
+//   span.appendChild(txt);
+//   myNodelist[i].appendChild(span);
+
+// if (((list.childNodes = 1), list.childNodes.length < 3)) {
+//   console.log("less than 3");
+// } else {
+//   console.log("more than 3!");
+// }
+// // if ((li < 4, li++)) {
+// // }
+// console.log(list);
