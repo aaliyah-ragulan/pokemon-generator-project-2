@@ -1,9 +1,8 @@
 @import "snippet";
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
-
+// GENERAL STYLES
 * {
-  // border: 1px solid #fe5858;
   font-family: "Press Start 2P", cursive;
   font-size: 1rem;
 }
@@ -48,9 +47,6 @@ h1 {
   margin: 0;
 }
 
-#burgerIcon {
-  display: none;
-}
 .navbar {
   background-image: url(../images/pikachu-hero.jpg);
   background-position: 20% 60%;
@@ -68,7 +64,6 @@ h1 {
 .navbar a:hover {
   border-bottom: 5px solid white;
 }
-
 
 .navbar ul {
   display: flex;
@@ -135,7 +130,6 @@ h1 {
   padding: 10px;
   border-radius: 40px;
 }
-
 
 .gridTwo {
   grid-row-start: 1/3;
@@ -212,7 +206,7 @@ h3 {
   font-size: 1rem;
 }
 
-// Favourite Pokemon Container
+// Favourite Pokemon Section
 .favouriteContainer {
   background-image: url(../images/pokemonSquirtle.jpg);
   background-size: cover;
@@ -234,7 +228,7 @@ h3 {
   text-align: center;
 }
 
-// Footer
+// Footer Section
 footer p {
   text-align: center;
   margin: 0;
@@ -250,61 +244,57 @@ footer a {
   color: white;
 }
 
+// MEDIA QUERIES
+
 @media (max-width: 472px) {
+  //header section
+  h1 {
+    font-size: 2.75em;
+    color: #fd4c4c;
+    text-shadow: 1px 1px 2px black;
+    text-align: center;
+  }
 
-//header
+  .navbar {
+    background-image: url(../images/pikachu-hero.jpg);
+    background-position: 8% 60%;
+    height: 30vh;
+    background-color: #723d3d;
+    background-blend-mode: screen;
+  }
 
-h1 {
-  font-size: 2.75em;
-  color: #fd4c4c;
-  text-shadow: 1px 1px 2px black;
-  text-align: center;
+  .pikachuGif {
+    display: none;
+  }
 
-}
+  .logoDiv {
+    text-align: center;
+  }
 
-.navbar {
-  background-image: url(../images/pikachu-hero.jpg);
-  background-position: 8% 60%;
-  height: 30vh;
-  background-color: #723D3D;
-  background-blend-mode: screen;
-}
+  .logo {
+    width: 50%;
+    height: 45%;
+  }
 
-.pikachuGif {
-  display: none;
-}
+  .navbar ul {
+    display: none;
+  }
 
-.logoDiv {
-  text-align: center;
-}
+  //generator section
 
-.logo {
-  width: 50%;
-  height: 45%;
-}
+  .grid {
+    display: flex;
+    flex-direction: column;
+  }
 
-.navbar ul {
-  display: none;
-}
-
-//generator container
-
-.grid {
-  display: flex;
-  flex-direction: column;
-        }
-
-.btn {
-  width: 40%;
-}
-
-
+  .btn {
+    width: 40%;
+  }
 
   //stats container
-  
-      .gridStatsContainer {
-          display: flex;
-          flex-direction: column;
-        }
-  
+
+  .gridStatsContainer {
+    display: flex;
+    flex-direction: column;
   }
+}

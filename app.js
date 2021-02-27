@@ -4,25 +4,22 @@ const pokemonGenerator = {};
 pokemonGenerator.apiURL = "https://pokeapi.co/api/v2/pokemon/";
 
 //create selectors
-let pokemonImage = document.querySelector(".generatedImage");
-let pokemonName = document.querySelector(".generatedName");
-let pokemonType = document.querySelector(".pokemonTypeName");
-let pokemonNumber = document.querySelector(".pokemonNumber");
-let pokemonAbilities = document.querySelector(".pokemonAbilities");
-let pokemonMoves = document.querySelector(".pokemonMoves");
-let favouritePokemon = document.querySelector(".favList");
-let generatorButton = document.querySelector(".generatorBtn");
-let list = document.querySelector(".list");
-
+pokemonGenerator.pokemonImage = document.querySelector(".generatedImage");
+pokemonGenerator.pokemonName = document.querySelector(".generatedName");
+pokemonGenerator.pokemonType = document.querySelector(".pokemonTypeName");
+pokemonGenerator.pokemonNumber = document.querySelector(".pokemonNumber");
+pokemonGenerator.pokemonAbilities = document.querySelector(".pokemonAbilities");
+pokemonGenerator.pokemonMoves = document.querySelector(".pokemonMoves");
+pokemonGenerator.favouritePokemon = document.querySelector(".favList");
+pokemonGenerator.generatorButton = document.querySelector(".generatorBtn");
 pokemonGenerator.numOfFav = 3;
 pokemonGenerator.counter = 0;
 pokemonGenerator.form = document.querySelector("form");
-
-let favButton = document.querySelector(".favBtn");
+pokemonGenerator.favButton = document.querySelector(".favBtn");
 
 // Click generates a random pokemon, information is store in a new variable
 
-generatorButton.addEventListener("click", function (event) {
+pokemonGenerator.generatorButton.addEventListener("click", function (event) {
   const randomizePokemon = Math.floor(Math.random() * 893);
   event.preventDefault();
 
@@ -35,39 +32,38 @@ generatorButton.addEventListener("click", function (event) {
     //parses json
     .then((jsonResponse) => {
       // grabs name
-      pokemonGenerator.pokemonName = jsonResponse.species["name"];
-      let name = pokemonGenerator.pokemonName;
-      pokemonName.innerHTML = name;
+      let pokemonName = jsonResponse.species["name"];
+      let name = pokemonName;
+      pokemonGenerator.pokemonName.innerHTML = name;
 
       // grabs type
-      pokemonGenerator.pokemonType = jsonResponse.types[0]["type"]["name"];
-      let type = pokemonGenerator.pokemonType;
-      pokemonType.innerHTML = type;
+      let pokemonType = jsonResponse.types[0]["type"]["name"];
+      let type = pokemonType;
+      pokemonGenerator.pokemonType.innerHTML = type;
 
       //grabs image
-      pokemonGenerator.pokemonImage = jsonResponse.sprites["front_default"];
-      let image = pokemonGenerator.pokemonImage;
+      let pokemonImage = jsonResponse.sprites["front_default"];
+      let image = pokemonImage;
       let pokeImage = document.createElement("img");
       pokeImage.src = image;
-      pokemonImage.innerHTML = "";
-      pokemonImage.append(pokeImage);
+      pokemonGenerator.pokemonImage.innerHTML = "";
+      pokemonGenerator.pokemonImage.append(pokeImage);
 
       //grabs move
-      pokemonGenerator.pokemonMoves = jsonResponse.moves[0]["move"]["name"];
-      let stats = pokemonGenerator.pokemonMoves;
-      pokemonMoves.innerHTML = stats;
+      let pokemonMoves = jsonResponse.moves[0]["move"]["name"];
+      let stats = pokemonMoves;
+      pokemonGenerator.pokemonMoves.innerHTML = stats;
 
       //grabs number
-      pokemonGenerator.pokemonNumber = jsonResponse.order;
-      let pokeNumber = pokemonGenerator.pokemonNumber;
-      pokemonNumber.innerHTML = pokeNumber;
+      let pokemonNumber = jsonResponse.order;
+      let pokeNumber = pokemonNumber;
+      pokemonGenerator.pokemonNumber.innerHTML = pokeNumber;
 
       //grabs ability
-      pokemonGenerator.pokemonAbilities =
-        jsonResponse.abilities[0]["ability"]["name"];
-      let abilities = pokemonGenerator.pokemonAbilities;
-      pokemonAbilities.innerHTML = abilities;
-
+      let pokemonAbilities = jsonResponse.abilities[0]["ability"]["name"];
+      let abilities = pokemonAbilities;
+      pokemonGenerator.pokemonAbilities.innerHTML = abilities;
+      let list = document.querySelector(".list");
       // save button function
       const handleSaveButton = function (event) {
         event.preventDefault();
@@ -103,6 +99,6 @@ generatorButton.addEventListener("click", function (event) {
       };
 
       //method to save pokemon, fav button functionality
-      favButton.onclick = handleSaveButton;
+      pokemonGenerator.favButton.onclick = handleSaveButton;
     });
 });

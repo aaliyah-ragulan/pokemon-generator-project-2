@@ -247,10 +247,6 @@ h1 {
   margin: 0;
 }
 
-#burgerIcon {
-  display: none;
-}
-
 .navbar {
   background-image: url(../images/pikachu-hero.jpg);
   background-position: 20% 60%;
@@ -485,7 +481,7 @@ footer a {
     background-image: url(../images/pikachu-hero.jpg);
     background-position: 8% 60%;
     height: 30vh;
-    background-color: #723D3D;
+    background-color: #723d3d;
     background-blend-mode: screen;
   }
   .pikachuGif {
