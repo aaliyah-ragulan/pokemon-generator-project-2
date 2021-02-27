@@ -83,7 +83,19 @@ h1 {
 }
 
 .pikachuRunning {
-  width: 200px
+  width: 200px;
+}
+
+.pokemonMove {
+  animation: pokemonMove 5s ease-in-out 0s infinite normal;
+}
+@keyframes pokemonMove {
+  0% {
+    left: 0px;
+  }
+  100% {
+    left: 500px;
+  }
 }
 
 .itemOne {
@@ -94,7 +106,6 @@ h1 {
   grid-row-start: 3;
   grid-column-start: 1;
 }
-
 
 // GENERATOR SECTION
 
@@ -183,7 +194,7 @@ h1 {
   // background: #fe5858;
 }
 
-.statsContainer .flex div  {
+.statsContainer .flex div {
   background: #f5f5f5;
   border: 2px solid #fe5858;
 }
