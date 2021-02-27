@@ -38,6 +38,7 @@ h2 {
 h1 {
   font-size: 3.5em;
   line-height: 1.25;
+  margin: 0;
 }
 
 .navbar {
@@ -82,21 +83,10 @@ h1 {
   align-items: center;
 }
 
-.pikachuRunning {
+.pikachuGif {
   width: 200px;
 }
 
-.pokemonMove {
-  animation: pokemonMove 5s ease-in-out 0s infinite normal;
-}
-@keyframes pokemonMove {
-  0% {
-    left: 0px;
-  }
-  100% {
-    left: 500px;
-  }
-}
 
 .itemOne {
   grid-column: 1 / 2;
@@ -129,8 +119,13 @@ h1 {
 .generatedImage {
   background: #fe5858;
   clip-path: circle(50% at 50% 50%);
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
+}
+
+.generatedName {
+  text-align: center;
+  font-size: 1.5rem;
 }
 
 .gridOne {
