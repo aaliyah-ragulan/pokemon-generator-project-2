@@ -11,15 +11,16 @@
     <!-- the logo and nav  -->
     <header>
       <div class="navbar">
-        <div class="container flex grid">
-          <div>
+        <div class="container grid ">
+          <div class=logoDiv>
             <img class="logo itemOne" src="./images/pokemon-logo.png" />
           </div>
           <nav class="itemTwo">
             <ul>
               <li><a href="index.html">Home</a></li>
-              <li><a href="#">Stats</a></li>
-              <li><a href="#">Favourites</a></li>
+              <li><a href="#generator">Generator</a></li>
+              <li><a href="#stats">Stats</a></li>
+              <li><a href="#favourites">Favourites</a></li>
             </ul>
           </nav>
           <h1 class="itemThree slideRight">
@@ -37,15 +38,15 @@
 
     <!-- the generator -->
     <main>
-      <section class="generatorContainer">
-        <div class="container grid">
-          <h2 class="gridOne">Choose Your Pokemon!</h2>
-
+      <section id="generator" class="generatorContainer">
+        <div class="container ">
+          <h2 >Choose Your Pokemon!</h2>
+          <div class="grid">
           <div class="gridTwo generatedImage"></div>
           <div class="gridThree">
             <p class="generatedName"></p>
           </div>
-          <form>
+          <form> 
             <button class="gridFour generatorBtn btn">Click Here</button>
             <button class="gridFive favBtn btn">Save Pokemon</button>
           </form>
@@ -53,10 +54,11 @@
           <!-- <p><a href="#">Click Here</a></p>
           <p><a href="#">Save Pokemon</a></p> -->
         </div>
+        </div>
       </section>
 
       <!-- the stats container -->
-      <section class="statsContainer">
+      <section id="stats" class="statsContainer">
         <div class="container">
           <h2>Pokemon Stats</h2>
           <div class="gridStatsContainer">
@@ -69,18 +71,18 @@
               <p class="pokemonTypeName"></p>
             </div>
             <div class="statsBox">
-              <h3>Abilties</h3>
+              <h3>Top Ability</h3>
               <p class="pokemonAbilities"></p>
             </div>
             <div class="statsBox">
-              <h3>Moves</h3>
+              <h3>Top Move</h3>
               <p class="pokemonMoves"></p>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="favouriteContainer">
+      <section id="favourites" class="favouriteContainer">
         <div class="container">
           <h2>Favourite 3 Pokemon</h2>
           <ul class="list">

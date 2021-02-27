@@ -232,20 +232,23 @@ h2 {
   text-align: center;
   font-size: 2rem;
   margin: 0;
-  padding-top: 20px;
+  padding: 20px 0;
   color: #fd4c4c;
   text-shadow: 1px 1px 2px black;
 }
 
 section {
   padding: 20px 0;
-  height: 50vh;
 }
 
 h1 {
   font-size: 3.5em;
   line-height: 1.25;
   margin: 0;
+}
+
+#burgerIcon {
+  display: none;
 }
 
 .navbar {
@@ -264,16 +267,6 @@ h1 {
 
 .navbar a:hover {
   border-bottom: 5px solid white;
-}
-
-.flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
 .navbar ul {
@@ -332,6 +325,7 @@ h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  row-gap: 10px;
 }
 
 .generatedImage,
@@ -354,16 +348,8 @@ h1 {
   font-size: 1.5rem;
   margin: 0;
   background: white;
-  border: 1px solid #fe5858;
   padding: 10px;
   border-radius: 40px;
-}
-
-.gridOne {
-  -ms-grid-row: 1;
-      grid-row-start: 1;
-  -ms-grid-column: span 3;
-      grid-column-start: span 3;
 }
 
 .gridTwo {
@@ -486,5 +472,55 @@ footer {
 
 footer a {
   color: white;
+}
+
+@media (max-width: 472px) {
+  h1 {
+    font-size: 2.75em;
+    color: #fd4c4c;
+    text-shadow: 1px 1px 2px black;
+    text-align: center;
+  }
+  .navbar {
+    background-image: url(../images/pikachu-hero.jpg);
+    background-position: 8% 60%;
+    height: 30vh;
+    background-color: #723D3D;
+    background-blend-mode: screen;
+  }
+  .pikachuGif {
+    display: none;
+  }
+  .logoDiv {
+    text-align: center;
+  }
+  .logo {
+    width: 50%;
+    height: 45%;
+  }
+  .navbar ul {
+    display: none;
+  }
+  .grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .btn {
+    width: 40%;
+  }
+  .gridStatsContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

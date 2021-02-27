@@ -102,12 +102,6 @@ generatorButton.addEventListener("click", function (event) {
         }
       };
 
-      // let savedPokemon = document.querySelector("li");
-      // savedPokemonArray.addEventListener("click", function (event) {
-      //   event.preventDefault();
-      //   console.log("just clicked");
-      // });
-
       //method to save pokemon, fav button functionality
       favButton.onclick = handleSaveButton;
     });

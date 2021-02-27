@@ -1,6 +1,7 @@
 @import "snippet";
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
+
 * {
   // border: 1px solid #fe5858;
   font-family: "Press Start 2P", cursive;
@@ -30,14 +31,13 @@ h2 {
   text-align: center;
   font-size: 2rem;
   margin: 0;
-  padding-top: 20px;
+  padding: 20px 0;
   color: #fd4c4c;
   text-shadow: 1px 1px 2px black;
 }
 
 section {
   padding: 20px 0;
-  height: 50vh;
 }
 
 //HEADER STYLES
@@ -48,6 +48,9 @@ h1 {
   margin: 0;
 }
 
+#burgerIcon {
+  display: none;
+}
 .navbar {
   background-image: url(../images/pikachu-hero.jpg);
   background-position: 20% 60%;
@@ -65,11 +68,7 @@ h1 {
 .navbar a:hover {
   border-bottom: 5px solid white;
 }
-.flex {
-  display: flex;
-  height: 100%;
-  justify-content: space-between;
-}
+
 
 .navbar ul {
   display: flex;
@@ -111,6 +110,7 @@ h1 {
   height: 100%;
   justify-content: center;
   align-items: center;
+  row-gap: 10px;
 }
 
 .generatedImage,
@@ -132,15 +132,10 @@ h1 {
   font-size: 1.5rem;
   margin: 0;
   background: white;
-  border: 1px solid #fe5858;
   padding: 10px;
   border-radius: 40px;
 }
 
-.gridOne {
-  grid-row-start: 1;
-  grid-column-start: span 3;
-}
 
 .gridTwo {
   grid-row-start: 1/3;
@@ -255,7 +250,61 @@ footer a {
   color: white;
 }
 
-// Media Queries
+@media (max-width: 472px) {
 
-@media only screen and (max-width: 472px) {
+//header
+
+h1 {
+  font-size: 2.75em;
+  color: #fd4c4c;
+  text-shadow: 1px 1px 2px black;
+  text-align: center;
+
 }
+
+.navbar {
+  background-image: url(../images/pikachu-hero.jpg);
+  background-position: 8% 60%;
+  height: 30vh;
+  background-color: #723D3D;
+  background-blend-mode: screen;
+}
+
+.pikachuGif {
+  display: none;
+}
+
+.logoDiv {
+  text-align: center;
+}
+
+.logo {
+  width: 50%;
+  height: 45%;
+}
+
+.navbar ul {
+  display: none;
+}
+
+//generator container
+
+.grid {
+  display: flex;
+  flex-direction: column;
+        }
+
+.btn {
+  width: 40%;
+}
+
+
+
+  //stats container
+  
+      .gridStatsContainer {
+          display: flex;
+          flex-direction: column;
+        }
+  
+  }
