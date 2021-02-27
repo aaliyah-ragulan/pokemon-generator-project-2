@@ -1,7 +1,6 @@
 // create an app object (pokemonGenerator)
 
 const pokemonGenerator = {};
-
 pokemonGenerator.apiURL = "https://pokeapi.co/api/v2/pokemon/";
 
 //create selectors
@@ -21,29 +20,11 @@ pokemonGenerator.form = document.querySelector("form");
 
 let favButton = document.querySelector(".favBtn");
 
-//initialize preset data
-//apiURL
-
-// fetch(`${pokemonGenerator.apiURL}${pokemonGenerator.randomizePokemon}`)
-// .then((response) => {
-//     return response.json();
-// })
-
-// .then((jsonResponse) => {
-//     console.log(jsonResponse)
-
-//    // pokemonGenerator.pokemonType = jsonResponse.types[0].type.name
-//     pokemonGenerator.pokemonName = jsonResponse.species["name"]
-//     console.log(pokemonGenerator.pokemonName)
-// })
-
 // Click generates a random pokemon, information is store in a new variable
 
 generatorButton.addEventListener("click", function (event) {
   const randomizePokemon = Math.floor(Math.random() * 893);
-  //prevents refresh
   event.preventDefault();
-  //console.log("click");
 
   //grabs api data
   fetch(`${pokemonGenerator.apiURL}${randomizePokemon}`)
@@ -53,17 +34,14 @@ generatorButton.addEventListener("click", function (event) {
     })
     //parses json
     .then((jsonResponse) => {
-      // console.log(jsonResponse);
+      // grabs name
       pokemonGenerator.pokemonName = jsonResponse.species["name"];
       let name = pokemonGenerator.pokemonName;
-
       pokemonName.innerHTML = name;
 
-      //   let type = pokemonGenerator.console.log(name);
-      //pokemonGenerator.pokemonType = jsonResponse.types[0].type.name
+      // grabs type
       pokemonGenerator.pokemonType = jsonResponse.types[0]["type"]["name"];
       let type = pokemonGenerator.pokemonType;
-      //console.log(type
       pokemonType.innerHTML = type;
 
       //grabs image
@@ -90,28 +68,19 @@ generatorButton.addEventListener("click", function (event) {
       let abilities = pokemonGenerator.pokemonAbilities;
       pokemonAbilities.innerHTML = abilities;
 
-      console.log("hi");
-
+      // save button function
       const handleSaveButton = function (event) {
         event.preventDefault();
-        // favouritePokemon.appendChild(document.createTextNode(name));
-        // console.log(name);
         let txt = name;
         li = document.createElement("li");
         li.innerHTML = "";
 
-        console.log("hi");
-
-        // console.log(pokemonGenerator.counter);
-
-        // html collection that needs to be an array
-        // console.log(list.children);
-
+        // converting html collection into array
         const savedPokemonArray = [...list.children];
         const checkDuplicate = function () {
           let hasDuplicate = false;
           savedPokemonArray.forEach((pokemon) => {
-            // console.log(pokemon.innerHTML);
+            //  makes sure that same pokemon can't be saved twice
             const savedName = pokemon.innerHTML;
             if (savedName === txt) {
               hasDuplicate = true;
@@ -120,55 +89,26 @@ generatorButton.addEventListener("click", function (event) {
           return hasDuplicate;
         };
 
-        console.log(checkDuplicate());
-
-        console.log(savedPokemonArray);
-
+        // loop to ensure that user can only store 3 favorite pokemon
         if (pokemonGenerator.counter < pokemonGenerator.numOfFav) {
           if (li && !checkDuplicate()) {
             li.innerHTML = txt;
             list.insertBefore(li, list.childNodes[0]);
-            console.log("it works");
             pokemonGenerator.counter++;
           } else if (li) {
-            console.log("pokemon already saved");
           }
         } else {
-          alert("more than 3!");
+          alert("You have already saved 3!");
         }
       };
 
+      // let savedPokemon = document.querySelector("li");
+      // savedPokemonArray.addEventListener("click", function (event) {
+      //   event.preventDefault();
+      //   console.log("just clicked");
+      // });
+
       //method to save pokemon, fav button functionality
       favButton.onclick = handleSaveButton;
-      //   pokemonGenerator.form.addEventListener("submit", function () {
-      //     favButton.removeEventListener("click", handleSaveButton);
-      //   });
     });
 });
-//create event listener on save pokemon button (grab api data outputted)
-
-//create event listener on random generator button (grab api data)
-
-//create a method to update pokemon profile and name based on api data
-//create a method to insert pokemon key stats based on result
-//create event listener to save generated pokemon
-//create a method to add generated pokemon to list
-//create a method to clear the list.
-
-// var myNodelist = document.getElementsByTagName("LI");
-// var i;
-// for (i = 0; i < myNodelist.length; i++) {
-//   var span = document.createElement("SPAN");
-//   var txt = document.createTextNode("\u00D7");
-//   span.className = "close";
-//   span.appendChild(txt);
-//   myNodelist[i].appendChild(span);
-
-// if (((list.childNodes = 1), list.childNodes.length < 3)) {
-//   console.log("less than 3");
-// } else {
-//   console.log("more than 3!");
-// }
-// // if ((li < 4, li++)) {
-// // }
-// console.log(list);

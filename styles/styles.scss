@@ -31,13 +31,15 @@ h2 {
   font-size: 2rem;
   margin: 0;
   padding-top: 20px;
-  color: #fe5858;
+  color: #fd4c4c;
+  text-shadow: 1px 1px 2px black;
 }
 
 section {
   padding: 20px 0;
   height: 50vh;
 }
+
 //HEADER STYLES
 
 h1 {
@@ -51,6 +53,7 @@ h1 {
   background-position: 20% 60%;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 50vh;
 }
 
 .navbar a {
@@ -81,7 +84,6 @@ h1 {
   display: grid;
   grid-template-columns: auto auto;
   gap: 20px;
-  // height: 100%;
   grid: 10vh;
   justify-content: center;
   align-items: center;
@@ -90,7 +92,6 @@ h1 {
 .pikachuGif {
   width: 200px;
 }
-
 
 .itemOne {
   grid-column: 1 / 2;
@@ -116,7 +117,6 @@ h1 {
 .generatedName,
 .generatorBtn,
 .favBtn {
-  // height: 100%;
   width: 100%;
 }
 
@@ -131,6 +131,10 @@ h1 {
   text-align: center;
   font-size: 1.5rem;
   margin: 0;
+  background: white;
+  border: 1px solid #fe5858;
+  padding: 10px;
+  border-radius: 40px;
 }
 
 .gridOne {
@@ -147,13 +151,6 @@ h1 {
   grid-column-start: 1;
 }
 
-// .gridThree,
-// .gridFour,
-// .gridFive {
-//   grid-column-start: 2;
-//   grid-column-end: 4;
-// }
-
 .gridFour {
   grid-column-start: 3;
 }
@@ -164,8 +161,11 @@ h1 {
 }
 
 .generatorContainer {
-  background: #f5f5f5;
-  
+  background-image: url(../images/pokemonCharmander.jpg);
+  background-position: 30% 0%;
+  background-size: cover;
+  background-color: #c99494;
+  background-blend-mode: screen;
 }
 
 .generatorBtn {
@@ -182,18 +182,17 @@ h1 {
 
 // Stats Section
 
-// .statsContainer .flex {
-//   justify-content: space-between;
-//   padding: 10px;
-//   margin: 10px;
-//   align-items: center;
-// }
-
 h3 {
-font-size: 1.25rem;
-padding: 10px;
-} 
+  font-size: 1.25rem;
+  padding: 10px;
+}
 
+.statsContainer {
+  background-image: url(../images/pokemonBulbusar.jpg);
+  background-size: cover;
+  background-color: #c99494;
+  background-blend-mode: screen;
+}
 
 .gridStatsContainer {
   display: grid;
@@ -207,6 +206,11 @@ padding: 10px;
 .statsBox {
   border: 2px solid #fe5858;
   border-radius: 40px;
+  background: #f5f5f5;
+}
+
+.statsBox:hover {
+  background: #fd4c4ca6;
 }
 
 .statsBox p {
@@ -215,20 +219,30 @@ padding: 10px;
 
 // Favourite Pokemon Container
 .favouriteContainer {
-  background-color: #f5f5f5;
+  background-image: url(../images/pokemonSquirtle.jpg);
+  background-size: cover;
+  background-color: #c99494;
+  background-blend-mode: screen;
+  height: auto;
   padding: 20px 0;
 }
 
 .favouriteContainer ul {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
+}
+
+.favouriteContainer li {
+  font-size: 2rem;
+  padding: 20px;
+  text-align: center;
 }
 
 // Footer
 footer p {
   text-align: center;
   margin: 0;
-  // padding: 20px 0;
 }
 
 footer {
@@ -239,4 +253,9 @@ footer {
 
 footer a {
   color: white;
+}
+
+// Media Queries
+
+@media only screen and (max-width: 472px) {
 }

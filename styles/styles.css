@@ -233,7 +233,8 @@ h2 {
   font-size: 2rem;
   margin: 0;
   padding-top: 20px;
-  color: #fe5858;
+  color: #fd4c4c;
+  text-shadow: 1px 1px 2px black;
 }
 
 section {
@@ -252,6 +253,7 @@ h1 {
   background-position: 20% 60%;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 50vh;
 }
 
 .navbar a {
@@ -351,6 +353,10 @@ h1 {
   text-align: center;
   font-size: 1.5rem;
   margin: 0;
+  background: white;
+  border: 1px solid #fe5858;
+  padding: 10px;
+  border-radius: 40px;
 }
 
 .gridOne {
@@ -384,7 +390,11 @@ h1 {
 }
 
 .generatorContainer {
-  background: #f5f5f5;
+  background-image: url(../images/pokemonCharmander.jpg);
+  background-position: 30% 0%;
+  background-size: cover;
+  background-color: #c99494;
+  background-blend-mode: screen;
 }
 
 .generatorBtn {
@@ -404,6 +414,13 @@ h3 {
   padding: 10px;
 }
 
+.statsContainer {
+  background-image: url(../images/pokemonBulbusar.jpg);
+  background-size: cover;
+  background-color: #c99494;
+  background-blend-mode: screen;
+}
+
 .gridStatsContainer {
   display: -ms-grid;
   display: grid;
@@ -418,6 +435,11 @@ h3 {
 .statsBox {
   border: 2px solid #fe5858;
   border-radius: 40px;
+  background: #f5f5f5;
+}
+
+.statsBox:hover {
+  background: #fd4c4ca6;
 }
 
 .statsBox p {
@@ -425,7 +447,11 @@ h3 {
 }
 
 .favouriteContainer {
-  background-color: #f5f5f5;
+  background-image: url(../images/pokemonSquirtle.jpg);
+  background-size: cover;
+  background-color: #c99494;
+  background-blend-mode: screen;
+  height: auto;
   padding: 20px 0;
 }
 
@@ -433,8 +459,18 @@ h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+}
+
+.favouriteContainer li {
+  font-size: 2rem;
+  padding: 20px;
+  text-align: center;
 }
 
 footer p {
