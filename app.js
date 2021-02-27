@@ -40,7 +40,7 @@ let favButton = document.querySelector(".favBtn");
 // Click generates a random pokemon, information is store in a new variable
 
 generatorButton.addEventListener("click", function (event) {
-  const randomizePokemon = Math.floor(Math.random() * 100);
+  const randomizePokemon = Math.floor(Math.random() * 893);
   //prevents refresh
   event.preventDefault();
   //console.log("click");

@@ -35,12 +35,17 @@ h2 {
 
 //HEADER STYLES
 
+h1 {
+  font-size: 3.5em;
+  line-height: 1.25;
+}
+
 .navbar {
   background-image: url(../images/pikachu-hero.jpg);
   background-position: 20% 60%;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 300px;
+  height: 50vh;
 }
 
 .navbar a {
@@ -64,7 +69,32 @@ h2 {
 
 .logo {
   width: 30%;
+  height: 30%;
 }
+
+.navbar .grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 20px;
+  // height: 100%;
+  grid: 10vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.pikachuRunning {
+  width: 200px
+}
+
+.itemOne {
+  grid-column: 1 / 2;
+}
+
+.itemFour {
+  grid-row-start: 3;
+  grid-column-start: 1;
+}
+
 
 // GENERATOR SECTION
 
@@ -124,13 +154,15 @@ h2 {
 
 .generatorContainer {
   background: #f5f5f5;
+  height: 50vh;
 }
 
 .generatorBtn {
   margin: 0 auto;
 }
 
-.btn a {
+.btn {
+  font-family: "Press Start 2P", cursive;
   border-radius: 20px;
   background: #fe5858;
   padding: 10px;
